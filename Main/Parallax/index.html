@@ -1,0 +1,161 @@
+<link rel="stylesheet" href="style.css">
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamparina</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        </style>
+</head>
+
+<style>
+
+
+    .sec{
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+    }
+        
+    .flexContainer{
+
+        border-radius:10px;
+        height: 400px;
+        width: 700px;
+        background-color: rgb(199, 199, 199);
+        display: flex;
+        flex-direction: row;
+        box-shadow: 0px 0px 30px 10px;
+        
+    }
+
+    @keyframes grow{
+
+        from{flex-grow: 0.5;}
+        to{flex-grow: 4;}
+
+    }
+    @keyframes shrink{
+
+        from{flex-grow: 4;}
+        to{flex-grow: 0.5;}
+
+    }
+
+    .flexItems{
+
+        flex-grow: 0.5;
+
+    }
+
+    .flexItems:nth-child(1){
+
+        background: url(off.jpg);
+        background-position: center;
+        border-radius: 10px 0 0 10px;
+
+    }
+    .flexItems:nth-child(2){
+
+        background: url(ferro.jpg);
+        background-position: center;
+
+    }
+    .flexItems:nth-child(3){
+
+        background: url(lapis.jpg);
+        background-position: center;
+
+    }
+    .flexItems:nth-child(4){
+
+        background: url(red.jpg);
+        background-position: center;
+
+    }
+    .flexItems:nth-child(5){
+
+        background: url(ouro.jpg);
+        background-position: center;
+
+    }
+    .flexItems:nth-child(6){
+
+        background: url(esmrl.jpg);
+        background-position: center;
+
+    }
+    .flexItems:nth-child(7){
+
+        background: url(dmd.jpg);
+        background-position: center;
+        border-radius: 0 10px 10px 0;
+
+    }
+
+    .flexItems:hover{
+
+        animation-name: grow;
+        animation-duration: 1s;
+        flex-grow: 4;
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+
+    }
+
+    .flexItems:not(:hover){
+
+        animation-name: shrink;
+        animation-duration: 1s;
+        flex-grow: 0.5;
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+
+    }
+
+</style>
+
+<body>
+
+    <header>
+        
+        <nav class="navigation"></nav>
+
+    </header>
+
+    <section class="parallax">
+        
+        <img src="Montanhas.png" id="hill2">
+        <img src="creeper.png" id="hill4">
+        <img src="Casa.png" id="tree">
+        <img src="Chao.png" id="plant">
+            <button id="text" class="btn press-start-2p-regular">Ligar</button>
+    </section>
+
+    <section class="sec">
+
+        <div class="flexContainer">
+
+            <a href="#"class="flexItems"><div class="flexItems"></div></a>
+            <a href="#"class="flexItems"><div class="flexItems"></div></a>
+            <a href="#"class="flexItems"><div class="flexItems"></div></a>
+            <a href="#"class="flexItems"><div class="flexItems"></div></a>
+            <a href="#"class="flexItems"><div class="flexItems"></div></a>
+            <a href="#"class="flexItems"><div class="flexItems"></div></a>
+            <a href="#"class="flexItems"><div class="flexItems"></div></a>
+              
+        </div>   
+        
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
