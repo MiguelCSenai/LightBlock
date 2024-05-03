@@ -117,6 +117,15 @@
         pointer-events: none;
 
     }
+    .prlx1{
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        pointer-events: none;
+
+    }
 
     .sec{
         position: relative;
@@ -274,6 +283,7 @@
         <img src="./Imagens/Elementos/Casa.png" id="tree">
         <img src="./Imagens/Elementos/Chao.png" id="plant">!-->
         <div class="prlx1" id="prlx1"></div>
+        <div class="prlx1-2" id="prlx1"></div>
         <button id="text" class="btn press-start-2p-regular">Ligar</button>
     </section>
 
@@ -307,8 +317,8 @@
             let value= window.scrollY;
 
             text.style.marginTop = value * 2.5 + 'px';
-            fundo.style.bottom = value * 0.7 + 'px';
-            prlx1.style.top = value * 0.8 + 'px';
+            fundo.style.bottom = value * 0.5 + 'px';
+            prlx1.style.bottom = value * 0.6 + 'px';
             Montanhas.style.top = value * 1 + 'px';
         })
 
