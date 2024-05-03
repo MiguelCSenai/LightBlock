@@ -7,16 +7,144 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lamparina</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-        </style>
+    <title>LightBlock</title>
 </head>
 
 <style>
 
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&display=swap');
 
+    .press-start-2p-regular {
+        font-family: "Press Start 2P", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: condensed;
+    }
+
+    #hill4{
+
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+        scale: 0.2;
+        top: -350px;
+        left: -250;
+        z-index: 2;
+        
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .fundo{
+
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1; /* Para garantir que o fundo esteja atrás do conteúdo */
+
+    }
+    
+    header{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 30px 100px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        z-index: 100;
+    }
+
+    .logo{
+        font-size: 2em;
+        color: #359381;
+        pointer-events: none;
+        margin-right: 270px;
+    }
+
+    .navigation a {
+        text-decoration: none;
+        color: #359381;
+        padding: 6px 15px;
+        border-radius: 20px;
+        margin: 0 10px;
+        font-weight: 600;
+    }
+
+    .navigation a:hover,
+    .navigation a.active {
+        background: #359381;
+        color: #fff;
+    }
+
+    .parallax{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+    }
+
+    #text{
+        position: absolute;
+        text-align: center;
+        font-size: 60%;
+        color: #fff;
+        width: 60px;
+        height: 30px;
+    }
+
+    .parallax img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        pointer-events: none;
+    }
+
+    .prlx1{
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        pointer-events: none;
+
+    }
+
+    .sec{
+        position: relative;
+        background: url(./Imagens/Elementos/Caverna.png);
+        padding: 100px;
+    }
+
+    .sec{
+        font-size: 3em;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+
+    .sec p{
+        font-size: 1em;
+        color: #fff;
+        font-weight: 300;
+    }
+
+    .btn{
+
+        scale: 3;
+        background: url(./Imagens/Elementos/Butão.png);
+        background-size: cover;
+        height: 30px;
+
+    }
+    
     .sec{
 
         display: flex;
@@ -33,7 +161,7 @@
         background-color: rgb(199, 199, 199);
         display: flex;
         flex-direction: row;
-        box-shadow: 0px 0px 30px 10px;
+        box-shadow: 0px 0px 30px 10px black;
         
     }
 
@@ -58,44 +186,44 @@
 
     .flexItems:nth-child(1){
 
-        background: url(off.jpg);
+        background: url(./Imagens/FlexContainer/off.jpg);
         background-position: center;
         border-radius: 10px 0 0 10px;
 
     }
     .flexItems:nth-child(2){
 
-        background: url(ferro.jpg);
+        background: url(./Imagens/FlexContainer/ferro.jpg);
         background-position: center;
 
     }
     .flexItems:nth-child(3){
 
-        background: url(lapis.jpg);
+        background: url(./Imagens/FlexContainer/lapis.jpg);
         background-position: center;
 
     }
     .flexItems:nth-child(4){
 
-        background: url(red.jpg);
+        background: url(./Imagens/FlexContainer/red.jpg);
         background-position: center;
 
     }
     .flexItems:nth-child(5){
 
-        background: url(ouro.jpg);
+        background: url(./Imagens/FlexContainer/ouro.jpg);
         background-position: center;
 
     }
     .flexItems:nth-child(6){
 
-        background: url(esmrl.jpg);
+        background: url(./Imagens/FlexContainer/esmrl.jpg);
         background-position: center;
 
     }
     .flexItems:nth-child(7){
 
-        background: url(dmd.jpg);
+        background: url(./Imagens/FlexContainer/dmd.jpg);
         background-position: center;
         border-radius: 0 10px 10px 0;
 
@@ -119,6 +247,14 @@
 
     }
 
+    .prlx1{
+        width: 100%;
+        height: 100%;
+        background: url('./Imagens/Elementos/prlx1.png');
+        background-size: cover;
+
+    }
+
 </style>
 
 <body>
@@ -129,13 +265,16 @@
 
     </header>
 
+    <img id="fundo" src="./Imagens/Elementos/fundo.jpg" class="fundo">
+
     <section class="parallax">
         
-        <img src="Montanhas.png" id="hill2">
-        <img src="creeper.png" id="hill4">
-        <img src="Casa.png" id="tree">
-        <img src="Chao.png" id="plant">
-            <button id="text" class="btn press-start-2p-regular">Ligar</button>
+        <!--<img src="./Imagens/Elementos/Montanhas.png" id="hill2">
+        <img src="./Imagens/Elementos/creeper.png" id="hill4">
+        <img src="./Imagens/Elementos/Casa.png" id="tree">
+        <img src="./Imagens/Elementos/Chao.png" id="plant">!-->
+        <div class="prlx1" id="prlx1"></div>
+        <button id="text" class="btn press-start-2p-regular">Ligar</button>
     </section>
 
     <section class="sec">
@@ -155,7 +294,25 @@
     </section>
 
 
-    <script src="script.js"></script>
+    <script>
+
+        let text = document.getElementById('text');
+        let fundo = document.getElementById('fundo')
+        let leaf = document.getElementById('leaf');
+        let Montanhas = document.getElementById('hill2');
+        let prlx1 = document.getElementById('prlx1');
+        let hill5 = document.getElementById('hill5');
+
+        window.addEventListener('scroll', () => {
+            let value= window.scrollY;
+
+            text.style.marginTop = value * 2.5 + 'px';
+            fundo.style.bottom = value * 0.7 + 'px';
+            prlx1.style.top = value * 0.8 + 'px';
+            Montanhas.style.top = value * 1 + 'px';
+        })
+
+    </script>
 </body>
 
 </html>
