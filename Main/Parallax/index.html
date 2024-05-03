@@ -44,7 +44,7 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        z-index: -1; /* Para garantir que o fundo esteja atrás do conteúdo */
+        z-index: -1;
 
     }
     
@@ -94,10 +94,10 @@
     #text{
         position: absolute;
         text-align: center;
-        font-size: 60%;
-        color: #fff;
+        font-size: .3pc;
+        color: #f1f1f1;
         width: 60px;
-        height: 30px;
+        height: 65px;
     }
 
     .parallax img{
@@ -117,13 +117,14 @@
         pointer-events: none;
 
     }
-    .prlx1{
+    .prlx1-2{
 
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         pointer-events: none;
+        z-index: 2;
 
     }
 
@@ -136,7 +137,6 @@
     .sec{
         font-size: 3em;
         color: #fff;
-        margin-bottom: 10px;
     }
 
     .sec p{
@@ -145,12 +145,22 @@
         font-weight: 300;
     }
 
+    .placa{
+
+        scale: 3;
+        background: url(./Imagens/Elementos/placa.png);
+        background-size: 100%;
+        border: none;
+
+    }
     .btn{
 
         scale: 3;
-        background: url(./Imagens/Elementos/spruce.jpg);
-        background-size: cover;
-        height: 30px;
+        background: url(./Imagens/Elementos/picareta.png);
+        background-size: 100%;
+        margin-top: 200px;
+        border: none;
+        z-index: 5;
 
     }
     
@@ -169,6 +179,7 @@
         width: 700px;
         background-color: rgb(199, 199, 199);
         display: flex;
+        margin-top: 4pc;
         flex-direction: row;
         box-shadow: 0px 0px 30px 10px black;
         
@@ -267,27 +278,26 @@
 </style>
 
 <body>
-
+    
     <header>
         
         <nav class="navigation"></nav>
-
-    </header>
-
-    <img id="fundo" src="./Imagens/Elementos/fundo.jpg" class="fundo">
-
-    <section class="parallax">
         
-        <!--<img src="./Imagens/Elementos/Montanhas.png" id="hill2">
-        <img src="./Imagens/Elementos/creeper.png" id="hill4">
-        <img src="./Imagens/Elementos/Casa.png" id="tree">
-        <img src="./Imagens/Elementos/Chao.png" id="plant">!-->
-        <div class="prlx1" id="prlx1"></div>
-        <div class="prlx1-2" id="prlx1"></div>
-        <button id="text" class="btn press-start-2p-regular">Ligar</button>
+    </header>
+    
+    <img id="fundo" src="./Imagens/Elementos/fundo.jpg" class="fundo">
+    <img src="./Imagens/Elementos/prlx1-3.png" class="prlx1-2" id="fundo">
+    
+    <section class="parallax">
+    
+            <div class="prlx1" id="prlx1"></div>
+            <div class="prlx1-2" id="prlx1"></div>
+        <!--<button id="text" class="btn press-start-2p-regular" onclick="minerar()">Minerar</button>!-->
+            <a onclick="minerar()" class="placa press-start-2p-regular" id="text"><br>Pegue e vamos<br> minerar</a> 
+            <a onclick="minerar()" class="btn press-start-2p-regular" id="text"><br></a> 
     </section>
 
-    <section class="sec">
+    <section class="sec" id="Caverna">
 
         <div class="flexContainer">
 
@@ -299,19 +309,21 @@
             <a href="#"class="flexItems"><div class="flexItems"></div></a>
             <a href="#"class="flexItems"><div class="flexItems"></div></a>
               
-        </div>   
-        
-    </section>
+        </div>       
 
+    </section>
 
     <script>
 
         let text = document.getElementById('text');
         let fundo = document.getElementById('fundo')
-        let leaf = document.getElementById('leaf');
-        let Montanhas = document.getElementById('hill2');
         let prlx1 = document.getElementById('prlx1');
-        let hill5 = document.getElementById('hill5');
+
+        function minerar() {
+            let caverna = document.getElementById('Caverna');
+            caverna.scrollIntoView({ behavior: 'smooth' });
+        }
+
 
         window.addEventListener('scroll', () => {
             let value= window.scrollY;
@@ -319,7 +331,7 @@
             text.style.marginTop = value * 2.5 + 'px';
             fundo.style.bottom = value * 0.5 + 'px';
             prlx1.style.bottom = value * 0.6 + 'px';
-            Montanhas.style.top = value * 1 + 'px';
+
         })
 
     </script>
