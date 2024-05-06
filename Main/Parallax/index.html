@@ -14,6 +14,14 @@
 
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&display=swap');
 
+    @keyframes drop{
+
+        0%{margin-bottom: 5px}
+        45%{margin-bottom: 22px}
+        100%{margin-bottom: 5px}
+
+    }
+
     .press-start-2p-regular {
         font-family: "Press Start 2P", system-ui;
         font-weight: 400;
@@ -132,11 +140,7 @@
         position: relative;
         background: url(./Imagens/Elementos/Caverna.png);
         padding: 100px;
-    }
-
-    .sec{
-        font-size: 3em;
-        color: #fff;
+        height: 650px;
     }
 
     .sec p{
@@ -151,18 +155,21 @@
         background: url(./Imagens/Elementos/placa.png);
         background-size: 100%;
         border: none;
+        pointer-events: none;
 
     }
-    .btn{
+    .btn {
+    scale: 3;
+    background: url(./Imagens/Elementos/picareta.jpg);
+    background-size: 100%;
+    margin-top: 200px;
+    border: none;
+    z-index: 5;
+    animation: infinite ease-in;
+    animation-name: drop;
+    animation-duration: 1.8s;
 
-        scale: 3;
-        background: url(./Imagens/Elementos/picareta.png);
-        background-size: 100%;
-        margin-top: 200px;
-        border: none;
-        z-index: 5;
-
-    }
+}
     
     .sec{
 
@@ -175,7 +182,6 @@
     .flexContainer{
 
         border-radius:10px;
-        height: 400px;
         width: 700px;
         background-color: rgb(199, 199, 199);
         display: flex;
@@ -285,7 +291,7 @@
         
     </header>
     
-    <img id="fundo" src="./Imagens/Elementos/fundo.jpg" class="fundo">
+    <img id="fundo" draggable="false" src="./Imagens/Elementos/fundo.jpg" class="fundo">
     <img src="./Imagens/Elementos/prlx1-3.png" class="prlx1-2" id="fundo">
     
     <section class="parallax">
@@ -293,23 +299,24 @@
             <div class="prlx1" id="prlx1"></div>
             <div class="prlx1-2" id="prlx1"></div>
         <!--<button id="text" class="btn press-start-2p-regular" onclick="minerar()">Minerar</button>!-->
-            <a onclick="minerar()" class="placa press-start-2p-regular" id="text"><br>Pegue e vamos<br> minerar</a> 
+            <div class="placa press-start-2p-regular" id="text"><br>Pegue e vamos<br> minerar</div> 
             <a onclick="minerar()" class="btn press-start-2p-regular" id="text"><br></a> 
     </section>
 
-    <section class="sec" id="Caverna">
+    <section class="sec">
 
-        <div class="flexContainer">
+        <div class="flexContainer" id="Caverna">
 
-            <a href="#"class="flexItems"><div class="flexItems"></div></a>
-            <a href="#"class="flexItems"><div class="flexItems"></div></a>
-            <a href="#"class="flexItems"><div class="flexItems"></div></a>
-            <a href="#"class="flexItems"><div class="flexItems"></div></a>
-            <a href="#"class="flexItems"><div class="flexItems"></div></a>
-            <a href="#"class="flexItems"><div class="flexItems"></div></a>
-            <a href="#"class="flexItems"><div class="flexItems"></div></a>
-              
-        </div>       
+            <a href="/off"class="flexItems"><div class="flexItems"></div></a>
+            <a href="/ferro"class="flexItems"><div class="flexItems"></div></a>
+            <a href="/lapis"class="flexItems"><div class="flexItems"></div></a>
+            <a href="/redstone"class="flexItems"><div class="flexItems"></div></a>
+            <a href="/ouro"class="flexItems"><div class="flexItems"></div></a>
+            <a href="/esmeralda"class="flexItems"><div class="flexItems"></div></a>
+            <a href="/diamante"class="flexItems"><div class="flexItems"></div></a>
+
+
+             
 
     </section>
 
@@ -327,8 +334,6 @@
 
         window.addEventListener('scroll', () => {
             let value= window.scrollY;
-
-            text.style.marginTop = value * 2.5 + 'px';
             fundo.style.bottom = value * 0.5 + 'px';
             prlx1.style.bottom = value * 0.6 + 'px';
 
