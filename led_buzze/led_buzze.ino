@@ -1,21 +1,21 @@
-#include <WiFi.h>
 #include <WebServer.h>
+#include <WiFi.h>
 
 const char* ssid = "Miguel";     // Insira o nome da sua rede WiFi
-const char* password = "Miguel.2008"; // Insira a senha da sua rede WiFi
+const char* password = "Miguel.3001"; // Insira a senha da sua rede WiFi
 
-#define Red 4;
-#define Green 6;
-#define Blue 8;
+#define r 32
+#define g 26
+#define b 12
 
 WebServer servidor(80); // Cria um servidor na porta 80
 
 void setup() {
   Serial.begin(115200);
 
-  pinMode(Red, OUTPUT);
-  pinMode(Green, OUTPUT);
-  pinMode(Blue, OUTPUT);
+  pinMode(r, OUTPUT);
+  pinMode(g, OUTPUT);
+  pinMode(b, OUTPUT);
 
   // Conecta-se à rede WiFi
   WiFi.begin(ssid, password);
@@ -48,52 +48,134 @@ void loop() {
 
 void PaginaInicial() {
   // Página HTML simples para controlar o LED e o Buzzer
-  String pagina = "<html><body>";
-  pagina += "<h1>Controle do LED e Buzzer</h1>";
-  pagina += "<a href=\"/ligar\"><button>Ligar LED e Buzzer</button></a><br>";
-  pagina += "<a href=\"/desligar\"><button>Desligar LED e Buzzer</button></a>";
-  pagina += "</body></html>";
+    String pagina = "<!DOCTYPE html>";
+  pagina += "<html lang=\"en\">";
+  pagina += "<head>";
+  pagina += "<meta charset=\"UTF-8\">";
+  pagina += "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
+  pagina += "<title>LightBlock</title>";
+  pagina += "<style>";
+  pagina += "body{";
+  pagina += "display: flex;";
+  pagina += "flex-direction: column;";
+  pagina += "align-items: center;";
+  pagina += "justify-content: center;";
+  pagina += "padding: 8%;";
+  pagina += "}";
+  pagina += ".container{";
+  pagina += "background: gray;";
+  pagina += "border-radius: 20px;";
+  pagina += "width: 500px;";
+  pagina += "height: 400px;";
+  pagina += "display: flex;";
+  pagina += "flex-direction: column;";
+  pagina += "padding: 30px;";
+  pagina += "}";
+  pagina += "a{";
+  pagina += "text-decoration: none;";
+  pagina += "color: black;";
+  pagina += "}";
+  pagina += ".items{";
+  pagina += "margin: 10px;";
+  pagina += "text-decoration: none;";
+  pagina += "background-color: azure;";
+  pagina += "width: 100px;";
+  pagina += "height: 30px;";
+  pagina += "text-align: center;";
+  pagina += "display: flex;";
+  pagina += "flex-direction: column;";
+  pagina += "justify-content: center;";
+  pagina += "}";
+  pagina += "</style>";
+  pagina += "</head>";
+  pagina += "<body>";
+  pagina += "<div class=\"container\">";
+  pagina += "<a href=\"/off\">";
+  pagina += "<div class=\"items\">Desligar</div>";
+  pagina += "</a>";
+  pagina += "<a href=\"/ferro\">";
+  pagina += "<div class=\"items\">Ferro</div>";
+  pagina += "</a>";
+  pagina += "<a href=\"/lapis\">";
+  pagina += "<div class=\"items\">Lápis Lazuli</div>";
+  pagina += "</a>";
+  pagina += "<a href=\"/redstone\">";
+  pagina += "<div class=\"items\">Redstone</div>";
+  pagina += "</a>";
+  pagina += "<a href=\"/ouro\">";
+  pagina += "<div class=\"items\">Ouro</div>";
+  pagina += "</a>";
+  pagina += "<a href=\"/esmeralda\">";
+  pagina += "<div class=\"items\">Esmeralda</div>";
+  pagina += "</a>";
+  pagina += "<a href=\"/diamante\">";
+  pagina += "<div class=\"items\">Diamante</div>";
+  pagina += "</a>";
+  pagina += "</div>";
+  pagina += "</body>";
+  pagina += "</html>";
   servidor.send(200, "text/html", pagina);
 }
 
 void ferro() {
   
-  setColor(222, 188, 167);
+  analogWrite(r, 222);
+  analogWrite(g, 188);
+  analogWrite(b, 167);
+  PaginaInicial();
 
 }
 
 void lapis() {
   
-  setColor(69, 108, 215);
+  analogWrite(r, 69);
+  analogWrite(g, 108);
+  analogWrite(b, 215);
+  PaginaInicial();
 
 }
 
 void redstone() {
   
-  setColor(250, 0, 0);
+  analogWrite(r, 250);
+  analogWrite(g, 0);
+  analogWrite(b, 0);
+  PaginaInicial();
 
 }
 
 void ouro() {
-  
-  setColor(247, 233, 74);
+
+  analogWrite(r, 247);
+  analogWrite(g, 30);
+  analogWrite(b, 74);
+  PaginaInicial();
 
 }
 
 void esmeralda() {
   
-  setColor(22, 216, 96);
+  analogWrite(r, 22);
+  analogWrite(g, 216);
+  analogWrite(b, 96);
+  PaginaInicial();
 
 }
 
 void diamante() {
   
-  setColor(99, 242, 222);
+  analogWrite(r, 99);
+  analogWrite(g, 242);
+  analogWrite(b, 222);
+  PaginaInicial();
 
 }
 
 void desligar() {
   
-  setColor(0, 0, 0);
+  analogWrite(r, 0);
+  analogWrite(g, 0);
+  analogWrite(b, 0);
+  PaginaInicial();
 
 }
