@@ -5,8 +5,8 @@ const char* ssid = "Miguel";     // Insira o nome da sua rede WiFi
 const char* password = "Miguel.3001"; // Insira a senha da sua rede WiFi
 
 #define r 32
-#define g 26
-#define b 12
+#define b 26
+#define g 12
 
 WebServer servidor(80); // Cria um servidor na porta 80
 
@@ -119,25 +119,25 @@ void PaginaInicial() {
 
 void ferro() {
   
-  analogWrite(r, 222);
-  analogWrite(g, 188);
-  analogWrite(b, 167);
+  analogWrite(r, 205);
+  analogWrite(g, 30);
+  analogWrite(b, 10);
   PaginaInicial();
 
 }
 
 void lapis() {
   
-  analogWrite(r, 69);
-  analogWrite(g, 108);
-  analogWrite(b, 215);
+  analogWrite(r, 0);
+  analogWrite(g, 100);
+  analogWrite(b, 255);
   PaginaInicial();
 
 }
 
 void redstone() {
   
-  analogWrite(r, 250);
+  analogWrite(r, 255);
   analogWrite(g, 0);
   analogWrite(b, 0);
   PaginaInicial();
@@ -146,25 +146,25 @@ void redstone() {
 
 void ouro() {
 
-  analogWrite(r, 247);
+  analogWrite(r, 255);
   analogWrite(g, 30);
-  analogWrite(b, 74);
+  analogWrite(b, 0);
   PaginaInicial();
 
 }
 
 void esmeralda() {
   
-  analogWrite(r, 22);
-  analogWrite(g, 216);
-  analogWrite(b, 96);
+  analogWrite(r, 0);
+  analogWrite(g, 255);
+  analogWrite(b, 0);
   PaginaInicial();
 
 }
 
 void diamante() {
   
-  analogWrite(r, 99);
+  analogWrite(r, 0);
   analogWrite(g, 242);
   analogWrite(b, 222);
   PaginaInicial();
