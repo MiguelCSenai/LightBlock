@@ -4,8 +4,8 @@
 const char* ssid = "Miguel";     // Insira o nome da sua rede WiFi
 const char* password = "Miguel.3001"; // Insira a senha da sua rede WiFi
 
-#define r 32
-#define b 26
+#define r 25
+#define b 32
 #define g 12
 
 WebServer servidor(80); // Cria um servidor na porta 80
@@ -129,7 +129,7 @@ void ferro() {
 void lapis() {
   
   analogWrite(r, 0);
-  analogWrite(g, 100);
+  analogWrite(g, 60);
   analogWrite(b, 255);
   PaginaInicial();
 
@@ -165,7 +165,7 @@ void esmeralda() {
 void diamante() {
   
   analogWrite(r, 0);
-  analogWrite(g, 242);
+  analogWrite(g, 142);
   analogWrite(b, 222);
   PaginaInicial();
 
