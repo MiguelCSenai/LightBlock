@@ -307,13 +307,12 @@
 
         <div class="flexContainer" id="Caverna">
 
-            <a href="/off"class="flexItems"><div class="flexItems"></div></a>
-            <a href="/ferro"class="flexItems"><div class="flexItems"></div></a>
-            <a href="/lapis"class="flexItems"><div class="flexItems"></div></a>
-            <a href="/redstone"class="flexItems"><div class="flexItems"></div></a>
-            <a href="/ouro"class="flexItems"><div class="flexItems"></div></a>
-            <a href="/esmeralda"class="flexItems"><div class="flexItems"></div></a>
-            <a href="/diamante"class="flexItems"><div class="flexItems"></div></a>
+            <div id="ferro" class="flexItems"></div>
+            <div id="lapis" class="flexItems"></div>
+            <div id="redstone" class="flexItems"></div>
+            <div id="ouro" class="flexItems"></div>
+            <div id="esmeralda" class="flexItems"></div>
+            <div id="diamante" class="flexItems"></div>
 
 
              
@@ -338,6 +337,25 @@
             prlx1.style.bottom = value * 0.6 + 'px';
 
         })
+
+
+        // Function to change URL
+        function changeUrl(newPath) {
+            window.location.href = newPath;
+        }
+
+        // Add click event listeners to each flex item
+        document.getElementById('off').addEventListener('click', () => changeUrl('/off'));
+        document.getElementById('ferro').addEventListener('click', () => changeUrl('/ferro'));
+        document.getElementById('lapis').addEventListener('click', () => changeUrl('/lapis'));
+        document.getElementById('redstone').addEventListener('click', () => changeUrl('/redstone'));
+        document.getElementById('ouro').addEventListener('click', () => changeUrl('/ouro'));
+        document.getElementById('esmeralda').addEventListener('click', () => changeUrl('/esmeralda'));
+        document.getElementById('diamante').addEventListener('click', () => changeUrl('/diamante'));
+    </script>
+</body>
+
+</html>
 
     </script>
 </body>
