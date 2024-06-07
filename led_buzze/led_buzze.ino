@@ -47,8 +47,8 @@ void loop() {
 }
 
 void PaginaInicial() {
-  // Página HTML simples para controlar o LED e o Buzzer
-    String pagina = "<!DOCTYPE html>";
+
+      String pagina = "<!DOCTYPE html>";
   pagina += "<html lang=\"en\">";
   pagina += "<head>";
   pagina += "<meta charset=\"UTF-8\">";
@@ -56,19 +56,24 @@ void PaginaInicial() {
   pagina += "<title>LightBlock</title>";
   pagina += "<style>";
   pagina += "body{";
+  pagina += "background: url('https://wallpapers.com/images/hd/stone-cave-and-oak-village-minecraft-hd-qmdm97bkjy0dxgtp.jpg');";
+  pagina += "background-position: center";
+  pagina += "background-size: cover;";
   pagina += "display: flex;";
   pagina += "flex-direction: column;";
   pagina += "align-items: center;";
   pagina += "justify-content: center;";
-  pagina += "padding: 8%;";
+  pagina += "padding: 10%;";
   pagina += "}";
   pagina += ".container{";
   pagina += "background: gray;";
   pagina += "border-radius: 20px;";
-  pagina += "width: 500px;";
-  pagina += "height: 400px;";
+  pagina += "width: 40%;";
   pagina += "display: flex;";
-  pagina += "flex-direction: column;";
+  pagina += "flex-direction: row;";
+  pagina += "gap: 50px;";
+  pagina += "justify-content: space-around;";
+  pagina += "flex-wrap: wrap;";
   pagina += "padding: 30px;";
   pagina += "}";
   pagina += "a{";
@@ -90,9 +95,6 @@ void PaginaInicial() {
   pagina += "</head>";
   pagina += "<body>";
   pagina += "<div class=\"container\">";
-  pagina += "<a href=\"/off\">";
-  pagina += "<div class=\"items\">Desligar</div>";
-  pagina += "</a>";
   pagina += "<a href=\"/ferro\">";
   pagina += "<div class=\"items\">Ferro</div>";
   pagina += "</a>";
@@ -114,6 +116,8 @@ void PaginaInicial() {
   pagina += "</div>";
   pagina += "</body>";
   pagina += "</html>";
+
+
   servidor.send(200, "text/html", pagina);
 }
 
@@ -129,7 +133,7 @@ void ferro() {
 void lapis() {
   
   analogWrite(r, 0);
-  analogWrite(g, 60);
+  analogWrite(g, 0);
   analogWrite(b, 255);
   PaginaInicial();
 
@@ -165,17 +169,8 @@ void esmeralda() {
 void diamante() {
   
   analogWrite(r, 0);
-  analogWrite(g, 142);
-  analogWrite(b, 222);
-  PaginaInicial();
-
-}
-
-void desligar() {
-  
-  analogWrite(r, 0);
-  analogWrite(g, 0);
-  analogWrite(b, 0);
+  analogWrite(g, 172);
+  analogWrite(b, 252);
   PaginaInicial();
 
 }
